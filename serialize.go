@@ -193,7 +193,7 @@ func MarshalStruct(input interface{}, options *MarshalOptions) ([]byte, error) {
 	}
 
 	className := reflect.ValueOf(input).Type().Name()
-	if options.OnlyStdClass {
+	if options != nil && options.OnlyStdClass {
 		className = "stdClass"
 	}
 
